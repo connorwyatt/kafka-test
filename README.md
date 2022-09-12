@@ -10,6 +10,8 @@ dotnet run --project KafkaTest.Producer/KafkaTest.Producer.csproj --Kafka:TopicN
 
 Where `TOPIC_NAME` (`string`) is the name of the topic to send messages to, and `MESSAGES_DELAY` (`int`) is the gap between messages in milliseconds.
 
+To run the consumer application, run:
+
 ```shell
 dotnet run --project KafkaTest.Consumer/KafkaTest.Consumer.csproj --Kafka:TopicName={TOPIC_NAME} --Kafka:ConsumerGroupId={CONSUMER_GROUP_ID}
 ```
