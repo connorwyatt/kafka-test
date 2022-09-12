@@ -36,6 +36,7 @@ public static class DependencyInjectionExtensions
           BootstrapServers = bootstrapServers,
           GroupId = groupId,
           AutoOffsetReset = AutoOffsetReset.Earliest,
+          PartitionAssignmentStrategy = PartitionAssignmentStrategy.RoundRobin,
         },
         serviceProvider.GetRequiredService<MessagePayloadTypes>()));
 
