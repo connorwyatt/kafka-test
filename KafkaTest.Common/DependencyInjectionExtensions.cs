@@ -1,5 +1,6 @@
 using System.Reflection;
 using Confluent.Kafka;
+using KafkaTest.Common.AdminClient;
 using KafkaTest.Common.Consumers;
 using KafkaTest.Common.Producers;
 using KafkaTest.Common.Serialization;
@@ -14,6 +15,12 @@ public static class DependencyInjectionExtensions
   {
     var bootstrapServers = configuration.GetValue<string>("Kafka:BootstrapServers");
     var groupId = configuration.GetValue<string>("Kafka:ConsumerGroupId");
+
+    services.AddSingleton<KafkaAdminClient>();
+
+    services.AddSingleton<IAdminClient>(
+      _ => new AdminClientBuilder(new KeyValuePair<string, string>[] { new("bootstrap.servers", bootstrapServers), })
+        .Build());
 
     services.AddSingleton(
       _ => new MessageProducer(
