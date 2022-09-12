@@ -1,6 +1,6 @@
 # Kafka Test
 
-Run the `docker-compose.yml` file in the root to get Zookeeper, Kafka, and Kafdrop (Admin UI) running. (Kafdrop will be exposed on port 9000)
+Run the `docker-compose.yml` file in the root to get **Zookeeper**, **Kafka**, and **Kafdrop** (Admin UI) running. (Kafdrop will be exposed on port 9000)
 
 To run the producer application, run:
 
