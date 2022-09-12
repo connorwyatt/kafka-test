@@ -17,7 +17,7 @@ public class KafkaAdminClient
     {
       if (topicMetadata.Partitions.Count != partitions)
       {
-        throw new InvalidOperationException("Inconsistent number of partitions.");
+        throw new InvalidOperationException("Topic already exists, but has an inconsistent number of partitions.");
       }
 
       return;
